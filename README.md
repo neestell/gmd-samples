@@ -12,4 +12,4 @@ Very simple. I put an every sample in separate branch and update it as soon as p
 |*| Branch  | Description  |
 |---|---|---|
 | 1  | [Gradle Groovy](https://github.com/neestell/gmd-samples/tree/feature/GMD-1) | Dependencies management for ***.gradle**|
-| 2  | [Gradle Kotlin DSL](https://github.com/neestell/gmd-samples/tree/feature/GMD-1) | Dependencies management for ***.gradle.kts**|
+| 2  | [Gradle Kotlin DSL](https://github.com/neestell/gmd-samples/tree/feature/GMD-2) | Dependencies management for ***.gradle.kts**|
