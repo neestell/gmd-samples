@@ -12,6 +12,12 @@ ext {
     espresso_version = "3.1.1"
     kotlin_version = "1.3.61"
 
+    rxAndroid_version = "2.1.1"
+    rxJava_version = "2.2.9"
+    rxKotlin_version = "2.3.0"
+
+    dagger2_version = "2.24"
+
     testLibs = [
             //Test Support
             jUnit   : "junit:junit:4.12",
@@ -25,6 +31,21 @@ ext {
                     appCompat : "androidx.appcompat:appcompat:$androidx_version",
                     constraintLayout: "androidx.constraintlayout:constraintlayout:1.1.3",
                     ktx       : "androidx.core:core-ktx:$androidx_version"
+            ],
+
+            //RX
+            rx : [
+                    android               : "io.reactivex.rxjava2:rxandroid:$rxAndroid_version",
+                    java                  : "io.reactivex.rxjava2:rxjava:$rxJava_version",
+                    kotlin                : "io.reactivex.rxjava2:rxkotlin:$rxKotlin_version",
+            ],
+
+            dagger : [
+                    library           : "com.google.dagger:dagger:$dagger2_version",
+                    android           : "com.google.dagger:dagger-android:$dagger2_version",
+                    supportLib        : "com.google.dagger:dagger-android-support:$dagger2_version",
+                    compiler          : "com.google.dagger:dagger-compiler:$dagger2_version",
+                    annotation        : "com.google.dagger:dagger-android-processor:$dagger2_version",
             ],
 
             //Kotlin libs
