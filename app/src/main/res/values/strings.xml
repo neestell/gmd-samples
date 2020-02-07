@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GMD Samples</string>
+    <string name="choose_operation">Choose operation</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiplication">*</string>
+    <string name="division">/</string>
 </resources>
