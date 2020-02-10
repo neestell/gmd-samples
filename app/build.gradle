@@ -22,6 +22,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -42,6 +47,10 @@ dependencies {
     implementation libs.dagger.library
     kapt libs.dagger.annotation
     kapt libs.dagger.compiler
+
+    implementation libs.moxy.library
+    implementation libs.moxy.support
+    kapt libs.moxy.compiler
 
     testImplementation testLibs.jUnit
     androidTestImplementation testLibs.jUnitExt

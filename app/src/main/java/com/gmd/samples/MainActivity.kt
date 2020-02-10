@@ -1,9 +1,10 @@
 package com.gmd.samples
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import moxy.MvpAppCompatActivity
+import moxy.MvpView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : MvpAppCompatActivity(), MvpView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

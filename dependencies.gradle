@@ -18,6 +18,8 @@ ext {
 
     dagger2_version = "2.24"
 
+    moxy_version = '2.1.1'
+
     testLibs = [
             //Test Support
             jUnit   : "junit:junit:4.12",
@@ -46,6 +48,13 @@ ext {
                     supportLib        : "com.google.dagger:dagger-android-support:$dagger2_version",
                     compiler          : "com.google.dagger:dagger-compiler:$dagger2_version",
                     annotation        : "com.google.dagger:dagger-android-processor:$dagger2_version",
+            ],
+
+            moxy : [
+                    library         : "com.github.moxy-community:moxy:$moxy_version",
+                    compiler        : "com.github.moxy-community:moxy-compiler:$moxy_version",
+                    support         : "com.github.moxy-community:moxy-androidx:$moxy_version",
+                    material        : "com.github.moxy-community:moxy-material:$moxy_version"
             ],
 
             //Kotlin libs
