@@ -1,11 +1,11 @@
 package com.gmd.samples.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import com.gmd.samples.di.DI
 import com.gmd.samples.presentation.APresenter
 import com.gmd.samples.presentation.ExpessionView
+import kotlinx.android.synthetic.main.f_common.*
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
 
@@ -19,15 +19,10 @@ class AFragment : ExpressionFragment(), ExpessionView {
     lateinit var presenter: APresenter
 
     @ProvidePresenter
-    fun providePresenter() : APresenter = APresenter()
+    fun providePresenter() : APresenter = DI.plusAComponent().providePresenter()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
-    }
-
-
-    override fun onResume() {
-        super.onResume()
-        presenter.selectOperation()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        buttonChouseOperation.setOnClickListener { OperationChooserDialogFragment.show(requireContext()) }
     }
 }

@@ -16,9 +16,5 @@ open class ExpressionFragment : MvpAppCompatFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.f_common, container, false)
-            .also { view ->
-                view.buttonChouseOperation.setOnClickListener { OperationChooserDialogFragment.show(requireContext()) }
-
-            }
     }
 }

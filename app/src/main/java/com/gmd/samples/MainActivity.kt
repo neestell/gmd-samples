@@ -9,8 +9,9 @@ class MainActivity : MvpAppCompatActivity(), MvpView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         DI.openRootScope(applicationContext)
             .inject(this)
+        setContentView(R.layout.activity_main)
+
     }
 }

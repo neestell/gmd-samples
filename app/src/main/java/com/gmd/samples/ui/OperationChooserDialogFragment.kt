@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import com.gmd.samples.R
+import com.gmd.samples.di.DI
 import com.gmd.samples.presentation.OperationPresenter
 import kotlinx.android.synthetic.main.df_input.view.*
 import moxy.MvpAppCompatDialogFragment
@@ -38,15 +39,27 @@ class OperationChooserDialogFragment : MvpAppCompatDialogFragment(), MvpView {
     lateinit var presenter: OperationPresenter
 
     @ProvidePresenter
-    fun providePresenter() = OperationPresenter()
+    fun providePresenter() = DI.openOperationChooserScope().providePresenter();
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.df_input, container, true)
             .also { view ->
-                view.buttonPlus.setOnClickListener { dismiss() }
-                view.buttonMinus.setOnClickListener { dismiss() }
-                view.buttonMultiplication.setOnClickListener { dismiss() }
-                view.buttonDivision.setOnClickListener { dismiss() }
+                view.buttonPlus.setOnClickListener {
+                    presenter.selectPlus()
+                    dismiss()
+                }
+                view.buttonMinus.setOnClickListener {
+                    presenter.selectMinus()
+                    dismiss()
+                }
+                view.buttonMultiplication.setOnClickListener {
+                    presenter.selectMultiplication()
+                    dismiss()
+                }
+                view.buttonDivision.setOnClickListener {
+                    presenter.selectDivision()
+                    dismiss()
+                }
             }
     }
 }

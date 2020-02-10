@@ -1,4 +1,4 @@
-package com.gmd.samples.di.root
+package com.gmd.samples.di
 
 import android.content.Context
 import com.gmd.samples.MainActivity
@@ -12,6 +12,10 @@ import dagger.Component
 @Component
 interface RootComponent {
     fun inject(activity: MainActivity)
+
+    fun openAScope(): AComponent
+
+    fun openBScope(): BComponent
 
     @Component.Builder
     interface Builder {
