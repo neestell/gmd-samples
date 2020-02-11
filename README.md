@@ -13,3 +13,4 @@ Very simple. I put every sample in separate branch and update it as soon as poss
 |---|---|---|
 | 1  | [Gradle Groovy](https://github.com/neestell/gmd-samples/tree/feature/GMD-1) | Dependencies management for ***.gradle**|
 | 2  | [Gradle Kotlin DSL](https://github.com/neestell/gmd-samples/tree/feature/GMD-2) | Dependencies management for ***.gradle.kts**|
+| 3  | [Share data between components](https://github.com/neestell/gmd-samples/tree/feature/GMD-3) | Change some data from one fragment and listen changes in another fragment. You can use **OperationScope** to manage listeners|
