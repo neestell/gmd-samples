@@ -1,6 +1,5 @@
 package com.gmd.samples.presentation
 
-import android.util.Log
 import com.gmd.samples.domain.OperationInteractor
 import moxy.InjectViewState
 import javax.inject.Inject
@@ -16,9 +15,9 @@ class BPresenter @Inject constructor(
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        Log.d("qwqw", "onFirstViewAttach B")
+
         operationInteractor.listenOperations()
-            .subscribe({ op -> Log.d("qwqw", "Op $op") }, { error -> error.printStackTrace() })
+            .subscribe({ op -> viewState.setOperation(op) }, { error -> error.printStackTrace() })
             .connect()
     }
 }

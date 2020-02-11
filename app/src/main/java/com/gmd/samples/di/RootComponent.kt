@@ -9,6 +9,7 @@ import dagger.Component
 /**
  * @author neestell on 2020-02-10.
  */
+@OperationScope //remove to share only for AComponent or BComponent
 @Component
 interface RootComponent {
     fun inject(activity: MainActivity)

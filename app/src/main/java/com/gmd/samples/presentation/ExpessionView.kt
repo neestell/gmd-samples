@@ -10,4 +10,7 @@ import moxy.viewstate.strategy.StateStrategyType
  */
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface ExpessionView : MvpView {
+
+    fun setOperation(op: String)
+
 }

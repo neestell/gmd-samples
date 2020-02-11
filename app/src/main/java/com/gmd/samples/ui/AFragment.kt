@@ -19,10 +19,14 @@ class AFragment : ExpressionFragment(), ExpessionView {
     lateinit var presenter: APresenter
 
     @ProvidePresenter
-    fun providePresenter() : APresenter = DI.plusAComponent().providePresenter()
+    fun providePresenter(): APresenter = DI.plusAComponent().providePresenter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         buttonChouseOperation.setOnClickListener { OperationChooserDialogFragment.show(requireContext()) }
+    }
+
+    override fun setOperation(op: String) {
+        textResult.text = makeExpression(op, 10, 5)
     }
 }

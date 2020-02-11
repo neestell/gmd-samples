@@ -1,6 +1,5 @@
 package com.gmd.samples.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import com.gmd.samples.di.DI
@@ -24,5 +23,9 @@ class BFragment : ExpressionFragment(), ExpessionView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         buttonChouseOperation.setOnClickListener { OperationChooserDialogFragment.show(requireContext()) }
+    }
+
+    override fun setOperation(op: String) {
+        textResult.text = makeExpression(op, 40, 5)
     }
 }
